@@ -14,7 +14,8 @@ This repo demonstrates many ROBOT commands using a reproducible Docker image.
 docker build -t robot-demo .
 
 # Run inside a container and keep outputs in your host folder:
-docker run --rm -it -v "$PWD:/work" -w /work robot-demo
+docker run --rm -it -v "${PWD}:/work" -w /work robot-demo
+
 # The default CMD runs: dataset.sh && run_demo.sh
 
 # After it finishes:

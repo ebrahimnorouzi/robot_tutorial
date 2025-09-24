@@ -1,5 +1,5 @@
-# Use a fixed version so behavior is reproducible with ROBOT 1.9.7
-FROM obolibrary/odkfull:1.9.7
+# Use a fixed version so behavior is reproducible with ROBOT
+FROM obolibrary/odkfull:latest
 
 # Work in /work to match typical bind-mount usage
 WORKDIR /work
