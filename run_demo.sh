@@ -178,7 +178,7 @@ robot remove \
 echo "== rename (using mapping.tsv) =="
 robot rename \
   --input "${RESULTS_DIR}/merged.owl" \
-  --mapping "${DATA_DIR}/mapping.tsv" \
+  --mappings "${DATA_DIR}/mapping.tsv" \
   --output "${RESULTS_DIR}/renamed.owl"
 
 echo "== repair (auto-fix modeling issues where possible) =="
@@ -188,6 +188,7 @@ robot repair \
 
 echo "== template (merge-before) =="
 robot template --merge-before \
+  --prefix "EX: http://example.com/" \
   --input "${RESULTS_DIR}/repaired.owl" \
   --template "${DATA_DIR}/template.csv" \
   --output "${RESULTS_DIR}/templated_merged.owl"

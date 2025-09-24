@@ -123,11 +123,11 @@ cat > "${DATA_DIR}/template.csv" <<'CSV'
 ID,LABEL,TYPE,SC %,EC %,DC %,A rdfs:comment,DOMAIN,RANGE,CHARACTERISTIC,I part_of,TI %,DI %
 ID,LABEL,TYPE,SC %,EC %,DC %,A rdfs:comment,DOMAIN,RANGE,CHARACTERISTIC,I part_of,TI %,DI %
 EX:0001,Organ,class,SC %,,"",Top-level organ class,,,,,,
-EX:0002,Heart,class,SC EX:0001,EC 'Organ' and part_of some EX:0004,DC EX:0003,Heart is an organ that is part_of some organism,,,,,,
-EX:0003,Lung,class,SC EX:0001,,DC EX:0002,Respiratory organ,,,,,,
+EX:0002,Heart,class,Organ,EC 'Organ' and part_of some EX:0004,DC EX:0003,Heart is an organ that is part_of some organism,,,,,,
+EX:0003,Lung,class,EX:0001,,DC EX:0002,Respiratory organ,,,,,,
 EX:0004,Organism,class,,,,"Whole organism (host) class",,,,,,
 EX:part_of,part of,object property,,,"",Parthood relation (object property),EX:0001,EX:0004,transitive,,,,
-EX:ind3,MyBody,individual,,,,,"Concrete individual of an Organism",,,,"TI EX:0004",
-EX:ind1,MyHeart,individual,,,,,"Concrete individual of a Heart","",,"",EX:ind3,TI EX:0002,EX:ind2
-EX:ind2,MyLung,individual,,,,,"Concrete individual of a Lung","",,"",EX:ind3,TI EX:0003,EX:ind1
+EX:ind3,MyBody,individual,,,,"Concrete individual of an Organism",,,,"TI EX:0004",
+EX:ind1,MyHeart,individual,,,,"Concrete individual of a Heart","",,"",EX:ind3,TI EX:0002,EX:ind2
+EX:ind2,MyLung,individual,,,,"Concrete individual of a Lung","",,"",EX:ind3,TI EX:0003,EX:ind1
 CSV
